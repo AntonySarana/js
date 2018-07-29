@@ -1,0 +1,43 @@
+.mainField {
+	margin:40px auto;
+	padding: 10px;
+	width: 480px;
+	height: 480px;
+	border:2px solid black;
+	display:flex;
+	justify-content: center;
+	align-item: center;
+	flex-direction: column;
+	
+}
+.row {
+	width:100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.box {
+	width: 90px;
+	height: 90px;
+	margin: 6px;
+	border:1px solid black;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	vertical-align:center
+}
+.emptyBox {
+	width: 90px;
+	height: 90px;
+	background: gray;
+	margin: 6px;
+	border:1px solid red;
+}
+.fillBox {
+	width: 90px;
+	height: 90px;
+	background: green;
+	margin: 6px;
+	border:1px solid black;
+}
