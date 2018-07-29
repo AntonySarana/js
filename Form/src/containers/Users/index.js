@@ -103,16 +103,18 @@ export default class Users extends React.Component{
                     }
                     
                 </div>
-                <div className='btn-group'>
-                    {currentPage > 0 && <button
-                        className='btn btn-dark'
+                <div className='btn-group pagination'>
+                    <button
+                        disabled = {currentPage > 0 ? false : true}
+                        className = 'btn btn-dark'
                         onClick = {() => this.pagination(-1)}
-                        >prev</button>}
+                        >prev</button>
                     <button disabled className='btn btn-dark'>{currentPage+1}</button>
-                    {currentPage < (Math.ceil(data.length/15)-1) && <button
+                    <button
+                        disabled = {currentPage < (Math.ceil(data.length/15)-1) ? false: true }
                         className='btn btn-dark'
                         onClick = {() => this.pagination(1)}
-                        >next</button>}
+                        >next</button>
                 </div>
                 {isActiveUser && <ActiveUser user={activeUser} activeUserClos={this.activeUserClos}/>}
             </React.Fragment>
