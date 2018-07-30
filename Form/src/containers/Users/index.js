@@ -18,6 +18,7 @@ export default class Users extends React.Component{
             isActiveUser: false,
             activeUser:{},
             currentPage: 0,
+            isSorted:'',
         }
     }
     componentWillMount() {
@@ -39,19 +40,42 @@ export default class Users extends React.Component{
             data
         } = this.state;
         const end = data[currentPage * 15 + 15];
-        console.log(Math.ceil(data.length/15));
+        
         if (end)  return data && data.slice(currentPage * 15, currentPage * 15 + 15)
         else return data && data.slice(currentPage * 15);
         
     }
 
+    userSort = (e) => {
+        const config = e.target.name
+        let sortMass = this.state.data;
+        let sorted;
+        if (this.state.isSorted == config) {
+            sorted = sortMass.sort((a,b) => {
+            return a[config] < b[config] ? 1: -1})
+            this.setState({
+                isSorted : '',
+            })
+        }
+        
+        else {
+            sorted = sortMass.sort((a,b) => {
+            return a[config] > b[config] ? 1: -1})
+            this.setState({
+                isSorted : config,
+            })   
+        };
+        this.setState({
+            data: sorted,
+        })
+    }
 
     userClick = (activeUser) => {
         this.setState({
             isActiveUser:true,
             activeUser,
         })
-        console.log(this.state.activeUser);
+        
     }
     activeUserClos = () =>{
         this.setState({
@@ -77,16 +101,36 @@ export default class Users extends React.Component{
                 <div className='Users'>
                     <div className='Users-header'>
                         <div>
-                            <p>Avatar</p>
+                            <button
+                                className = 'btn btn-secondary'
+                                name = 'id' 
+                                onClick = {(e) => this.userSort(e)}
+                                >Avatar
+                            </button>
                         </div>
                         <div>
-                            <p>Name</p>
+                            <button
+                                className = 'btn btn-secondary'
+                                name = 'name' 
+                                onClick = {(e) => this.userSort(e)}
+                                > Name
+                            </button>
                         </div>
                         <div>
-                            <p>Age</p>
+                            <button
+                                className = 'btn btn-secondary'
+                                name = 'age' 
+                                onClick = {(e) => this.userSort(e)}
+                                >Age
+                            </button>
                         </div>
                         <div>
-                            <p>Phone</p>
+                            <button
+                                className = 'btn btn-secondary'
+                                name = 'phone' 
+                                onClick = {(e) => this.userSort(e)}
+                                >Phone
+                            </button>
                         </div>
                         
                     </div>
