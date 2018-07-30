@@ -88,6 +88,28 @@ export default class Users extends React.Component{
             currentPage: this.state.currentPage+move,
         })
     }
+
+    userSearch = (e) => {
+        if (e.target.name == 'brakeSearch') {
+            this.setState({
+            data: this.state.defaultUsers,
+            })
+            e.target.previousElementSibling.value = '';
+        }
+        const searchValue = e.target.value;
+        if (searchValue.length < 3) return '';
+        const searchResult = this.state.defaultUsers.filter(item => {
+            return (
+                item.name.toLowerCase().includes(searchValue.toLowerCase()) ? item : false
+            )
+        })
+        this.setState({
+            data:searchResult,
+            currentPage:0,
+        })
+        //notification
+    }
+
     render(){
         const page = this.showPage();
         const {
@@ -98,6 +120,23 @@ export default class Users extends React.Component{
         } = this.state;
         return(
             <React.Fragment>
+                <div className='input-group mb-3'>
+                    <input
+                        type = 'text'
+                        onChange = {(e) => this.userSearch(e)}
+                        name = 'search'
+                        placeholder = 'enter more then 2 letter for serach...'
+                        className = 'form-control'
+                    >
+                    </input>
+                    <button
+                        type="button"
+                        className = "btn btn-outline-secondary"
+                        name = 'brakeSearch'
+                        onClick = {(e) => this.userSearch(e)}
+                    >Breake Search
+                    </button>
+                </div>
                 <div className='Users'>
                     <div className='Users-header'>
                         <div>
