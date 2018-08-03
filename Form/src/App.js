@@ -10,7 +10,7 @@ import Users from './containers/Users';
 import Profile from './containers/Profile';
 import Chat from './containers/Chat';
 import Head from './components/Header';
-
+import SideBar from './containers/SideBar';
 
 class App extends Component {
   render() {
@@ -19,6 +19,7 @@ class App extends Component {
         <Router>
           <div>
             <Head />
+            <SideBar />
             <Route path = '/' component = {Homepage} exact = {true} />
             <Route path = '/about' component = {About} />
             <Route path = '/users' component = {Users} />

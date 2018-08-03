@@ -4,6 +4,7 @@
 }
 .Users {
     margin: 20px;
+    margin-top: 0px;
     width: 90%;
 }
 .Users-header {
@@ -110,4 +111,7 @@
 }
 .pagination {
     margin:5px 20px;
+}
+.input-group {
+    margin:10px 0 0 0;
 }

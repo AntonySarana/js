@@ -24,13 +24,13 @@ export default (props) => {
                     <p>ID: {id}</p>
                     <p>Age: {age}</p>
                     <p>Phone: {phone}</p>
-                    <p>Phrase: <i>{phrase}</i></p>
+                    <p>Phrase: {phrase}</p>
                 </div>
-               {/*  esli avtorizirovan
+               {/* *  esli avtorizirovan */}
                 { props.isAutorized && <div className='ActiveUser-Card-active'>
                     <button>Message</button>
                     <button>Report</button>
-                </div>} */}
+                </div>} 
                 
             </div>
         </div>

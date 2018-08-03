@@ -48,10 +48,10 @@ export default class Users extends React.Component{
 
     userSort = (e) => {
         const config = e.target.name
-        let sortMass = this.state.data;
+        const {data} = this.state;
         let sorted;
         if (this.state.isSorted == config) {
-            sorted = sortMass.sort((a,b) => {
+            sorted = data.sort((a,b) => {
             return a[config] < b[config] ? 1: -1})
             this.setState({
                 isSorted : '',
@@ -59,7 +59,7 @@ export default class Users extends React.Component{
         }
         
         else {
-            sorted = sortMass.sort((a,b) => {
+            sorted = data.sort((a,b) => {
             return a[config] > b[config] ? 1: -1})
             this.setState({
                 isSorted : config,
@@ -120,24 +120,25 @@ export default class Users extends React.Component{
         } = this.state;
         return(
             <React.Fragment>
-                <div className='input-group mb-3'>
-                    <input
-                        type = 'text'
-                        onChange = {(e) => this.userSearch(e)}
-                        name = 'search'
-                        placeholder = 'enter more then 2 letter for serach...'
-                        className = 'form-control'
-                    >
-                    </input>
-                    <button
-                        type="button"
-                        className = "btn btn-outline-secondary"
-                        name = 'brakeSearch'
-                        onClick = {(e) => this.userSearch(e)}
-                    >Breake Search
-                    </button>
-                </div>
                 <div className='Users'>
+                    <div className='input-group '>
+                        <input
+                            type = 'text'
+                            onChange = {(e) => this.userSearch(e)}
+                            name = 'search'
+                            placeholder = 'enter more then 2 letter for serach...'
+                            className = 'form-control'
+                        >
+                        </input>
+                        <button
+                            type="button"
+                            className = "btn btn-outline-secondary"
+                            name = 'brakeSearch'
+                            onClick = {(e) => this.userSearch(e)}
+                        >Breake Search
+                        </button>
+                    </div>
+                
                     <div className='Users-header'>
                         <div>
                             <button
