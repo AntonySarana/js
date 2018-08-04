@@ -1,6 +1,7 @@
 // isxodnie dannie
 import React from 'react';
 import './style.css';
+import connect from 'react-redux/lib/connect/connect';
 
 const date = new Date();
 const societys = [ 
@@ -36,7 +37,7 @@ var user = {
 
 
 // basoviy container SidePanel
-export default class App extends React.Component{
+class SideBar extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -45,10 +46,11 @@ export default class App extends React.Component{
     }
   }
   render(){
-    
     return(
     <div className= 'sideBar'>
-        <Profile user = {this.state.userProfile} />
+        <Profile 
+          user = {this.props.loginUser}
+          />
         <Timing date={date}/> 
         <i
           className="fas fa-bars fa-2x"
@@ -65,18 +67,18 @@ export default class App extends React.Component{
 // component - Modul profilya
 function Profile (props) {
   const {
-    isLog,name,countNewMessage
+    image,name,id,age
   } = props.user;
   return (
     <div className='Profile'>
-    {isLog && 
+    {props.user.name && 
     <div className='Profile'>
-          <p>icon</p>
+          <p><img src={image} className='iconUser'/></p>
           <p>{name}</p>
-          <p>{isLog}</p>
-          <p>{countNewMessage}</p>
+          <p>age-{age}</p>
+          <p>id-{id}</p>
         </div>}
-      {!isLog && 
+      {!props.user && 
         <div>
          <i className="fas fa-lock fa-2x soc-red"></i>
         </div>
@@ -113,3 +115,10 @@ function DropMenu (props) {
     
   )
 }
+
+const mapStateToProps = (state) =>{
+  return {
+    loginUser:state.login,
+  }
+}
+export default connect(mapStateToProps)(SideBar)

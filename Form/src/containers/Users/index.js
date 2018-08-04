@@ -60,7 +60,6 @@ import ActiveUser from '../../components/ActiveUser';
         const config = e.target.name
         const {data} = this.state;
         let sorted;
-        console.log(this.props.userData);
         if (this.state.isSorted == config) {
             sorted = data.sort((a,b) => {
             return a[config] < b[config] ? 1: -1})
@@ -122,6 +121,7 @@ import ActiveUser from '../../components/ActiveUser';
     }
 
     render(){
+        console.log(this.props)
         const page = this.showPage();
         const {
             data,

@@ -10,7 +10,7 @@ import * as actionInit from './actions/stateInitAction';
 import Homepage from './containers/Homepage';
 import About from './containers/About';
 import Users from './containers/Users';
-import Profile from './containers/Profile';
+import Profile from './containers/AuthorizeForm';
 import Chat from './containers/Chat';
 import Head from './components/Header';
 import SideBar from './containers/SideBar';

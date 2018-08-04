@@ -2,10 +2,12 @@
 import { combineReducers } from 'redux';
 
 // other Reducers
-import isNotification from './notificationReducer';
+import Notification from './notificationReducer';
 import stateInit from './stateinitReducer';
+import login from './authorizeReducer';
 
 export default combineReducers({
-    isNotification : isNotification,
+    Notification : Notification,
     userData : stateInit,
+    login : login,
 })
