@@ -1,5 +1,6 @@
 // -  REACT
 import React from 'react';
+import {connect} from 'react-redux';
 
 // -  Data,Styles, etc..
 import data from '../../data.txt';
@@ -10,7 +11,7 @@ import UsersItem from '../../components/UsersItem';
 import ActiveUser from '../../components/ActiveUser';
 
 
-export default class Users extends React.Component{
+ class Users extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -50,6 +51,7 @@ export default class Users extends React.Component{
         const config = e.target.name
         const {data} = this.state;
         let sorted;
+        console.log(this.props.data); // proverka bez smislovoy nagruzki
         if (this.state.isSorted == config) {
             sorted = data.sort((a,b) => {
             return a[config] < b[config] ? 1: -1})
@@ -205,3 +207,11 @@ export default class Users extends React.Component{
         )
     }
 }
+
+const mapStateToProps = (store) => {
+    return{
+        data: store,
+    }
+}
+
+export default connect(mapStateToProps)(Users)

@@ -60,6 +60,7 @@
     border: 4px solid black;
     border-radius: 16px;
     position: absolute;
+    box-shadow: 3px 15px 111px darkred;
     left: 50%;
     top: 50%;
     transform: translate(-250px,-200px);

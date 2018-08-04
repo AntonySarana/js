@@ -41,7 +41,7 @@ export default (props) => {
             <nav className='btn-group' >
                 {menu.map((item,index) => {
                     return( 
-                    <Link to={item.path}><button className='btn btn-dark'>{item.title}</button></Link>
+                    <Link key={index} to={item.path}><button className='btn btn-dark'>{item.title}</button></Link>
                     )
                 })}
             </nav>

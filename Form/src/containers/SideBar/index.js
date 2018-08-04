@@ -1,6 +1,5 @@
 // isxodnie dannie
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './style.css';
 
 const date = new Date();
@@ -25,11 +24,6 @@ const societys = [
     title: "fab fa-facebook soc-blue",
     path:'https://www.facebook.com',
   },
-  
-  
-  
-  
-  
 ];
 var user = {
   isLog: false,
@@ -57,7 +51,7 @@ export default class App extends React.Component{
         <Profile user = {this.state.userProfile} />
         <Timing date={date}/> 
         <i
-          class="fas fa-bars fa-2x"
+          className="fas fa-bars fa-2x"
           onClick = {() =>
             this.setState ({
             isSideMenuOpen : !this.state.isSideMenuOpen,
@@ -84,7 +78,7 @@ function Profile (props) {
         </div>}
       {!isLog && 
         <div>
-         <i class="fas fa-lock fa-2x soc-red"></i>
+         <i className="fas fa-lock fa-2x soc-red"></i>
         </div>
       }
     </div>
