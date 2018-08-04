@@ -36,10 +36,9 @@ class App extends Component {
   componentDidUpdate(){
     const data = this.state.data;
     this.props.userData(data);
-    console.log(data);
   }
   render() {
-
+    
     return (
       <React.Fragment>
         <Router>

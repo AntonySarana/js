@@ -1,14 +1,10 @@
 import * as actionType from '../actions/actionType';
 
-export default (state =[],action) => {
+export default (state= [] ,action) => {
     switch (action.type) {
         case (actionType.STATE_INIT):
-        return [
-            ...state,
-            Object.assign({},action.data)
-            
-        ];
-        
+        const newState = state.concat(action.data);
+        return newState;
         default: return state;
     }
 }

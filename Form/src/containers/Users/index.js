@@ -16,13 +16,21 @@ import ActiveUser from '../../components/ActiveUser';
         super(props);
         this.state = {
             data: [],
+            defaultUsers:[],
             isActiveUser: false,
             activeUser:{},
             currentPage: 0,
             isSorted:'',
         }
     }
-    componentWillMount() {
+
+    componentWillMount(){
+        this.setState({
+            defaultUsers:this.props.userData,
+            data: this.props.userData,
+        })
+    }
+    /* componentWillMount() {
         fetch(data)
         .then(response => response.json())
         .then(data => {
@@ -34,8 +42,9 @@ import ActiveUser from '../../components/ActiveUser';
                 isActiveUser : false,
             })
         })
-    }
-    showPage = () =>{
+    } */
+
+    showPage = () =>{ 
         const {
             currentPage,
             data
@@ -51,7 +60,7 @@ import ActiveUser from '../../components/ActiveUser';
         const config = e.target.name
         const {data} = this.state;
         let sorted;
-        console.log(this.props.data); // proverka bez smislovoy nagruzki
+        console.log(this.props.userData);
         if (this.state.isSorted == config) {
             sorted = data.sort((a,b) => {
             return a[config] < b[config] ? 1: -1})
@@ -177,7 +186,7 @@ import ActiveUser from '../../components/ActiveUser';
                         
                     </div>
                     {
-                        page.map((item,index) => {
+                       page &&  page.map((item,index) => {
                             return(
                                 <UsersItem 
                                 item={item} 
@@ -210,7 +219,7 @@ import ActiveUser from '../../components/ActiveUser';
 
 const mapStateToProps = (store) => {
     return{
-        data: store,
+        userData: store.userData,
     }
 }
 
