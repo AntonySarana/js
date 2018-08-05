@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router,Route} from 'react-router-dom';
+import {BrowserRouter as Router,Route,BrowserHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { createConnect } from 'react-redux/lib/connect/connect';
+
+
+
+
 //
 import './App.css';
 import data from './data.txt';
@@ -14,7 +18,6 @@ import Profile from './containers/AuthorizeForm';
 import Chat from './containers/Chat';
 import Head from './components/Header';
 import SideBar from './containers/SideBar';
-
 
 
 class App extends Component {
@@ -41,14 +44,14 @@ class App extends Component {
     
     return (
       <React.Fragment>
-        <Router>
+        <Router >
           <div>
             <Head />
             <SideBar />
             <Route path = '/' component = {Homepage} exact = {true} />
             <Route path = '/about' component = {About} />
             <Route path = '/users' component = {Users} />
-            <Route path = '/profile' component = {Profile} />
+            <Route path = '/AuthorizeForm' component = {Profile} />
             <Route path = '/chat' component = {Chat} />
           </div>
         </Router>

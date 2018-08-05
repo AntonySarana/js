@@ -1,0 +1,66 @@
+.sideBar {
+  background-color: gray;
+  border: 2px darkgray solid;
+  border-radius: 10px;
+  position: fixed;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px 10px;
+  margin: 3px;
+  text-align: center;
+  width: 100px;
+  z-index: 2; }
+  .sideBar i {
+    width: 30px;
+    height: auto;
+    color: lightgray;
+    text-shadow: 4px 4px 5px black;
+    transition: 0.5s; }
+  .sideBar i:hover {
+    transform: scale(1.2, 1.2);
+    text-shadow: 7px 7px 6px black;
+    transition: 0.5s; }
+  .sideBar .Profile {
+    border-bottom: solid 1px lightgray;
+    text-align: center;
+    color: white;
+    padding: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px; }
+  .sideBar .Profile p {
+    padding: 0;
+    margin: 0; }
+  .sideBar .time {
+    border-bottom: solid 1px lightgray;
+    text-align: center;
+    color: white;
+    padding: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px; }
+  .sideBar .time p {
+    padding: 0;
+    margin: 0; }
+  .sideBar .time_hm {
+    font-weigth: bold;
+    font-size: 25px; }
+  .sideBar .dropMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 1s; }
+  .sideBar .dropMenu p {
+    font-size: 20px;
+    padding: 0;
+    margin: 5px; }
+  .sideBar .soc-red:hover {
+    color: #dd4040; }
+  .sideBar .soc-purple:hover {
+    color: purple; }
+  .sideBar .soc-blue:hover {
+    color: #2424be; }
+  .sideBar .soc-violet:hover {
+    color: violet; }
+  .sideBar .soc-lightblue:hover {
+    color: #29b1df; }

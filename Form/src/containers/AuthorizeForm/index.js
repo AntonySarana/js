@@ -1,11 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 //components & styles
 import './style.css';
 import Login from '../../components/Forms/Login.js';
 import Register from '../../components/Forms/Register.js';
 import * as Action from '../../actions/authorizeAction.js';
+
+
 
 class RegForm extends React.Component {
   constructor (props) {
@@ -86,7 +89,8 @@ class RegForm extends React.Component {
     return(
       <div className='Autorisation'>
         <div className ='Autorisation-window'>
-          <h3 className='ActiveUserClose' >X</h3>
+          <Link to = '/'> <h3 
+            className='ActiveUserClose'>X</h3></Link>
           <div className="btn-group" role="group">
             <button
               type="button"
