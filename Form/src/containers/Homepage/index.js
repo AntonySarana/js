@@ -9,7 +9,7 @@ export default class Homepage extends React.Component{
         return(
             <div>
                <p> Zdes dalshe budet component blogov i soobsheniy.
-                 a poka zdes prosto tekst</p>
+                 a poka - prosto tekst</p>
             </div>
         )
     }
