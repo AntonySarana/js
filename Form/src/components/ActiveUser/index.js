@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/style.css';
+import '../../containers/Users/style.css';
 
 export default (props) => {
     const {
@@ -8,7 +8,7 @@ export default (props) => {
         id,
         phrase,
         age,
-        phone
+        phone,
     } = props.user
     return (
 
@@ -26,10 +26,13 @@ export default (props) => {
                     <p>Phone: {phone}</p>
                     <p>Phrase: {phrase}</p>
                 </div>
-               {/* *  esli avtorizirovan */}
-                { props.isAutorized && <div className='ActiveUser-Card-active'>
-                    <button>Message</button>
-                    <button>Report</button>
+                {console.log( props.loginUser)}
+                
+                { props.loginUser.id && <div className='ActiveUser-Card-active'>
+                    { props.loginUser.id === id && <p>Here we are!</p>}
+                    { !(props.loginUser.id === id) &&
+                    <div><button>Message</button>
+                    <button>Report</button></div>}
                 </div>} 
                 
             </div>

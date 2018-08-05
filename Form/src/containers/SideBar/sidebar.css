@@ -10,7 +10,8 @@
   margin: 3px;
   text-align: center;
   width: 100px;
-  z-index: 2; }
+  z-index: 2;
+  box-shadow: 2px 2px 24px black; }
   .sideBar i {
     width: 30px;
     height: auto;

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../containers/Users/style.css';
 
 export default (props) => {
     return(

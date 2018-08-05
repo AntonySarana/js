@@ -1,0 +1,44 @@
+.Profile {
+    margin:15px 15px;
+    &__user{
+        padding: 5px 15px;
+        border: gray solid 2px;
+        box-shadow: 4px 4px 20px black;
+        width:60%;
+        margin: 0 auto;
+        >div {
+            font-size: 15px;
+            border-bottom: 1px solid blue;
+            margin: 10px 0;
+            padding: 5px 20px;
+            
+        }
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        padding: 5px;
+        border-bottom: 1px solid blue;
+        h3 {
+            font-size: 30px;
+        }
+    }
+    &__img{
+        display: inline;
+        img{
+            width: 120px;
+        }
+    }
+    &__title{
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow:  1 1 14px black;
+        padding: 5px;
+        margin: 0 25px 0 0 ;
+    }
+    .row {
+        align-items: center;
+    }
+}

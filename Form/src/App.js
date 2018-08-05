@@ -14,11 +14,11 @@ import * as actionInit from './actions/stateInitAction';
 import Homepage from './containers/Homepage';
 import About from './containers/About';
 import Users from './containers/Users';
-import Profile from './containers/AuthorizeForm';
+import Profile from './containers/Profile';
 import Chat from './containers/Chat';
 import Head from './components/Header';
 import SideBar from './containers/SideBar';
-
+import AuthorizeFrom from './containers/AuthorizeForm';
 
 class App extends Component {
   constructor(props){
@@ -48,11 +48,12 @@ class App extends Component {
           <div>
             <Head />
             <SideBar />
-            <Route path = '/' component = {Homepage} exact = {true} />
+            <Route path = '/' component = {Homepage} strict  exact  />
             <Route path = '/about' component = {About} />
             <Route path = '/users' component = {Users} />
-            <Route path = '/AuthorizeForm' component = {Profile} />
+            <Route path = '/profile' component = {Profile} />
             <Route path = '/chat' component = {Chat} />
+            <Route path = '/AuthorizeForm' component = {AuthorizeFrom} />
           </div>
         </Router>
         

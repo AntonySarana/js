@@ -57,7 +57,7 @@ class RegForm extends React.Component {
       email:'',
       policy: false,
     })
-    console.log(this.props)
+    console.log(this.props);
   } 
   OnChange = (e) => {
     const element = e.target.name;
@@ -123,8 +123,6 @@ class RegForm extends React.Component {
                 {...this.state}
              /> 
           }  
-{/*           <input onChange={(e) => this.Change(e)}/>
-          <button onClick={()=>console.log(this.state)}>12</button> */}
         </div>
       </div>
     

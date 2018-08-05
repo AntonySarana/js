@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 // -  Data,Styles, etc..
 import data from '../../data.txt';
-import '../../assets/style.css';
+import './style.css';
 
 // -  Components
 import UsersItem from '../../components/UsersItem';
@@ -211,7 +211,12 @@ import ActiveUser from '../../components/ActiveUser';
                         onClick = {() => this.pagination(1)}
                         >next</button>
                 </div>
-                {isActiveUser && <ActiveUser user={activeUser} activeUserClos={this.activeUserClos}/>}
+                {isActiveUser && 
+                    <ActiveUser
+                        user={activeUser}
+                        activeUserClos={this.activeUserClos}
+                        loginUser={this.props.loginUser}
+                        />}
             </React.Fragment>
         )
     }
@@ -220,6 +225,7 @@ import ActiveUser from '../../components/ActiveUser';
 const mapStateToProps = (store) => {
     return{
         userData: store.userData,
+        loginUser: store.login,
     }
 }
 
