@@ -1,9 +1,7 @@
 .Autorisation {
-    postition: fixed;
     width: 100%;
     margin:0;
     height: 800px;
-    background-color: #222;
     z-index: 3;
   
   .Autorisation-window {
@@ -16,8 +14,8 @@
     background-color:white;
     width: 250px;
     height: 400px;
-    border:red solid 2px;
-    box-shadow: 3px 15px 111px darkred;
+    border:gray solid 2px;
+    box-shadow: 4px 15px 36px rgb(51, 2, 2);
   }
   .btn-group{
     width:90%;

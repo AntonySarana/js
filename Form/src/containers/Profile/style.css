@@ -3,7 +3,7 @@
   .Profile__user {
     padding: 5px 15px;
     border: gray solid 2px;
-    box-shadow: 4px 4px 20px black;
+    box-shadow: 4px 15px 36px #330202;
     width: 60%;
     margin: 0 auto; }
     .Profile__user > div {

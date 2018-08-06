@@ -27,6 +27,10 @@ export default (props) => {
             title:'Chat',
             path:'/chat',
         },
+        {
+            title:'Login',
+            path:'/login',
+        },
     ];
     
     return(

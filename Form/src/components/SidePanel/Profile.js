@@ -19,12 +19,12 @@ export default (props) => {
             <p>age-{age}</p>
             <p>id-{id}</p>
         </div>}
-        {!props.user.name && 
+        {/* !props.user.name && 
           <div>
               <Link to='/AuthorizeForm'>
                   <i className="fas fa-lock fa-2x soc-red"></i>
               </Link>
-          </div>
+          </div> */
         }
       </div>
     )

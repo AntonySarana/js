@@ -53,7 +53,7 @@ class App extends Component {
             <Route path = '/users' component = {Users} />
             <Route path = '/profile' component = {Profile} />
             <Route path = '/chat' component = {Chat} />
-            <Route path = '/AuthorizeForm' component = {AuthorizeFrom} />
+            <Route path = '/login' component = {AuthorizeFrom} />
           </div>
         </Router>
         

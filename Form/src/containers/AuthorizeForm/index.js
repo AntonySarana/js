@@ -89,8 +89,6 @@ class RegForm extends React.Component {
     return(
       <div className='Autorisation'>
         <div className ='Autorisation-window'>
-          <Link to = '/'> <h3 
-            className='ActiveUserClose'>X</h3></Link>
           <div className="btn-group" role="group">
             <button
               type="button"
